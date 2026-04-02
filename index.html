@@ -53,11 +53,11 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .badge-blue  { background: rgba(0,200,255,0.15); color: var(--accent); }
-    .badge-purple{ background: rgba(123,47,255,0.2); color: #b57bff; }
-    .badge-gold  { background: rgba(245,166,35,0.15); color: var(--gold); }
-    .badge-green { background: rgba(0,230,118,0.12); color: var(--green); }
-    .badge-red   { background: rgba(255,68,68,0.15); color: var(--red); }
+    .badge-blue   { background: rgba(0,200,255,0.15); color: var(--accent); }
+    .badge-purple { background: rgba(123,47,255,0.2); color: #b57bff; }
+    .badge-gold   { background: rgba(245,166,35,0.15); color: var(--gold); }
+    .badge-green  { background: rgba(0,230,118,0.12); color: var(--green); }
+    .badge-red    { background: rgba(255,68,68,0.15); color: var(--red); }
 
     .section-label {
       font-size: 0.75rem;
@@ -70,9 +70,6 @@
 
     h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.2; }
     h3 { font-size: 1.1rem; font-weight: 700; }
-
-    .glow { text-shadow: 0 0 30px rgba(0,200,255,0.6); }
-    .glow-purple { text-shadow: 0 0 30px rgba(123,47,255,0.7); }
 
     /* ── NAV ── */
     nav {
@@ -199,7 +196,6 @@
       z-index: 1;
     }
 
-    .hero-text { }
     .hero-eyebrow {
       display: flex;
       align-items: center;
@@ -256,7 +252,6 @@
       border-top: 1px solid var(--border);
     }
 
-    .stat-item { }
     .stat-num {
       font-size: 1.8rem;
       font-weight: 900;
@@ -271,7 +266,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
     }
 
     .cpu-3d {
@@ -320,15 +314,6 @@
 
     .cpu-core:nth-child(odd) { animation-delay: 0.5s; }
     .cpu-core:nth-child(3n) { animation-delay: 1s; }
-
-    .cpu-pins {
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
 
     .cpu-ring {
       position: absolute;
@@ -387,7 +372,6 @@
       color: var(--muted);
     }
     .ticker-item .ti-name { color: var(--text); }
-    .ticker-item .ti-price { color: var(--accent); }
     .ticker-item .ti-dot {
       width: 4px;
       height: 4px;
@@ -414,7 +398,7 @@
       padding: 48px 40px;
       position: relative;
       overflow: hidden;
-      min-height: 280px;
+      min-height: 260px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -453,7 +437,6 @@
       color: var(--accent);
       margin-bottom: 10px;
     }
-
     .banner-card-side .banner-tag { color: var(--gold); }
 
     .banner-card h2 {
@@ -478,31 +461,8 @@
       filter: blur(1px);
     }
 
-    .price-tag {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 4px;
-      margin-bottom: 20px;
-    }
-
-    .price-currency { font-size: 1rem; color: var(--muted); }
-    .price-amount { font-size: 2.2rem; font-weight: 900; color: var(--text); }
-    .price-orig { font-size: 0.9rem; color: var(--muted); text-decoration: line-through; }
-
-    .save-badge {
-      background: rgba(0,230,118,0.15);
-      color: var(--green);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-left: 8px;
-    }
-
     /* ── PRODUCTS SECTION ── */
-    .products-section {
-      padding: 80px 20px;
-    }
+    .products-section { padding: 80px 20px; }
 
     .section-header {
       max-width: 1200px;
@@ -562,7 +522,6 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
-      cursor: pointer;
       transition: all 0.3s;
       position: relative;
       overflow: hidden;
@@ -656,46 +615,6 @@
       color: var(--muted);
     }
 
-    .card-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-
-    .card-price-wrap { }
-    .card-price {
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--text);
-      line-height: 1;
-    }
-    .card-orig {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: line-through;
-    }
-
-    .add-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border: none;
-      color: #fff;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 4px 16px rgba(0,200,255,0.3);
-    }
-    .add-btn:hover { transform: scale(1.1); }
-    .add-btn:active { transform: scale(0.95); }
-
     .stock-indicator {
       display: flex;
       align-items: center;
@@ -704,13 +623,9 @@
       font-weight: 600;
       margin-bottom: 4px;
     }
-    .stock-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-    }
-    .in-stock { color: var(--green); }
-    .in-stock .stock-dot { background: var(--green); animation: blink 2s infinite; }
+    .stock-dot { width: 6px; height: 6px; border-radius: 50%; }
+    .in-stock  { color: var(--green); }
+    .in-stock .stock-dot  { background: var(--green); animation: blink 2s infinite; }
     .low-stock { color: var(--gold); }
     .low-stock .stock-dot { background: var(--gold); }
     .out-stock { color: var(--muted); }
@@ -730,7 +645,7 @@
     .stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 1px; }
     .rating-count { font-size: 0.72rem; color: var(--muted); }
 
-    /* ── COMPARE BANNER ── */
+    /* ── COMPARE ── */
     .compare-banner {
       background: linear-gradient(135deg, var(--surface2), var(--surface));
       border-top: 1px solid var(--border);
@@ -750,10 +665,7 @@
       background: radial-gradient(circle, rgba(0,200,255,0.06) 0%, transparent 70%);
     }
 
-    .compare-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .compare-inner { max-width: 1200px; margin: 0 auto; }
 
     .compare-grid {
       display: grid;
@@ -792,22 +704,10 @@
       white-space: nowrap;
     }
 
-    .compare-icon {
-      font-size: 40px;
-      margin-bottom: 16px;
-    }
+    .compare-icon { font-size: 40px; margin-bottom: 16px; }
+    .compare-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .compare-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; }
 
-    .compare-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-    .compare-sub {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .spec-rows { }
     .spec-row {
       display: flex;
       justify-content: space-between;
@@ -821,23 +721,12 @@
     .spec-row .sr-val { font-weight: 600; color: var(--text); }
     .spec-row .sr-val.highlight { color: var(--accent); }
 
-    .compare-price {
-      margin-top: 20px;
-      font-size: 1.6rem;
-      font-weight: 900;
-    }
-    .compare-card .btn { width: 100%; margin-top: 16px; text-align: center; }
+    .compare-card .btn { width: 100%; margin-top: 20px; text-align: center; }
 
     /* ── BRAND STRIP ── */
-    .brand-strip {
-      padding: 50px 20px;
-    }
+    .brand-strip { padding: 50px 20px; }
 
-    .brand-strip-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .brand-strip-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
 
     .brand-strip p {
       font-size: 0.78rem;
@@ -863,7 +752,6 @@
       letter-spacing: -0.02em;
     }
     .brand-logo:hover { color: var(--text); }
-    .brand-logo.intel { letter-spacing: 0.05em; }
 
     /* ── WHY US ── */
     .why-section {
@@ -873,10 +761,7 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .why-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .why-inner { max-width: 1200px; margin: 0 auto; }
 
     .why-grid {
       display: grid;
@@ -892,10 +777,7 @@
       border-radius: var(--radius);
       transition: all 0.3s;
     }
-    .why-card:hover {
-      border-color: rgba(0,200,255,0.3);
-      transform: translateY(-3px);
-    }
+    .why-card:hover { border-color: rgba(0,200,255,0.3); transform: translateY(-3px); }
 
     .why-icon {
       width: 50px;
@@ -913,15 +795,9 @@
     .why-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
     .why-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
-    /* ── PROMO STRIP ── */
-    .promo-strip {
-      padding: 80px 20px;
-    }
-
-    .promo-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    /* ── PROMO ── */
+    .promo-strip { padding: 80px 20px; }
+    .promo-inner { max-width: 1200px; margin: 0 auto; }
 
     .promo-grid {
       display: grid;
@@ -984,12 +860,7 @@
       border-top: 1px solid var(--border);
     }
 
-    .newsletter-inner {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
     .newsletter h2 { margin-bottom: 12px; }
     .newsletter p { color: var(--muted); margin-bottom: 32px; }
 
@@ -1022,10 +893,7 @@
       padding: 60px 20px 30px;
     }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
 
     .footer-top {
       display: grid;
@@ -1062,11 +930,7 @@
 
     .footer-col ul { list-style: none; }
     .footer-col li { margin-bottom: 10px; }
-    .footer-col a {
-      font-size: 0.875rem;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
+    .footer-col a { font-size: 0.875rem; color: var(--muted); transition: color 0.2s; }
     .footer-col a:hover { color: var(--text); }
 
     .footer-bottom {
@@ -1096,8 +960,8 @@
     }
     .social-link:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── CART TOAST ── */
-    #cart-toast {
+    /* ── TOAST (wishlist only) ── */
+    #notif-toast {
       position: fixed;
       bottom: 30px;
       right: 30px;
@@ -1108,73 +972,29 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,200,255,0.1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
       transform: translateY(80px);
       opacity: 0;
       transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       z-index: 999;
       max-width: 300px;
     }
-
-    #cart-toast.show { transform: translateY(0); opacity: 1; }
-
+    #notif-toast.show { transform: translateY(0); opacity: 1; }
     .toast-icon {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
     }
-
-    .toast-text { }
     .toast-title { font-size: 0.875rem; font-weight: 700; }
-    .toast-sub { font-size: 0.75rem; color: var(--muted); }
-
-    /* ── CART COUNTER ── */
-    .cart-btn {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 14px;
-      color: var(--text);
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.2s;
-    }
-    .cart-btn:hover { border-color: var(--accent); }
-
-    .cart-count {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      background: var(--accent);
-      color: #000;
-      font-size: 0.65rem;
-      font-weight: 700;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .cart-count.visible { opacity: 1; transform: scale(1); }
+    .toast-sub   { font-size: 0.75rem; color: var(--muted); }
 
     /* ── MOBILE MENU ── */
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 60px;
-      left: 0;
-      right: 0;
+      top: 60px; left: 0; right: 0;
       background: rgba(10,12,16,0.98);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
@@ -1183,7 +1003,6 @@
       flex-direction: column;
       gap: 12px;
     }
-
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
       color: var(--text);
@@ -1195,33 +1014,33 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero-content { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-      .banner-grid { grid-template-columns: 1fr; }
-      .compare-grid { grid-template-columns: 1fr; }
-      .promo-grid { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
+      .hero-content   { grid-template-columns: 1fr; }
+      .hero-visual    { display: none; }
+      .banner-grid    { grid-template-columns: 1fr; }
+      .compare-grid   { grid-template-columns: 1fr; }
+      .promo-grid     { grid-template-columns: 1fr; }
+      .footer-top     { grid-template-columns: 1fr 1fr; }
+      .nav-links      { display: none; }
+      .hamburger      { display: flex; }
     }
 
     @media (max-width: 600px) {
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-      .newsletter-form { flex-direction: column; }
-      .hero-stats { gap: 20px; }
+      .footer-top     { grid-template-columns: 1fr; }
+      .footer-bottom  { flex-direction: column; gap: 16px; text-align: center; }
+      .newsletter-form{ flex-direction: column; }
+      .hero-stats     { gap: 20px; }
       .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── CART TOAST ── -->
-<div id="cart-toast">
-  <div class="toast-icon">🛒</div>
-  <div class="toast-text">
-    <div class="toast-title" id="toast-title">Item added!</div>
-    <div class="toast-sub" id="toast-sub">Check your cart</div>
+<!-- ── NOTIFICATION TOAST (wishlist only) ── -->
+<div id="notif-toast">
+  <div class="toast-icon">♥</div>
+  <div>
+    <div class="toast-title" id="toast-title">Saved!</div>
+    <div class="toast-sub" id="toast-sub">Added to your wishlist</div>
   </div>
 </div>
 
@@ -1239,12 +1058,7 @@
     </ul>
 
     <div class="nav-actions">
-      <button class="cart-btn" onclick="alert('Cart feature coming soon!')">
-        🛒 Cart
-        <span class="cart-count" id="cart-count">0</span>
-      </button>
-      <button class="btn btn-ghost" style="display:none" id="sign-in-btn">Sign In</button>
-      <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
+      <button class="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1279,14 +1093,14 @@
       </h1>
 
       <p>
-        From budget-friendly workhorses to elite silicon monsters — 
+        From budget-friendly workhorses to elite silicon monsters —
         CoreVault stocks the CPUs, motherboards, and memory your build deserves.
         Curated. Tested. Delivered fast.
       </p>
 
       <div class="hero-cta">
         <button class="btn btn-primary btn-large" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-          Shop Components
+          Browse Components
         </button>
         <button class="btn btn-ghost btn-large" onclick="document.getElementById('compare').scrollIntoView({behavior:'smooth'})">
           Compare CPUs
@@ -1296,7 +1110,7 @@
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-num">2,400+</div>
-          <div class="stat-label">Products in stock</div>
+          <div class="stat-label">Products catalogued</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">48h</div>
@@ -1333,28 +1147,16 @@
       <div class="chip-art">⚡</div>
       <div class="banner-tag">★ Editor's Pick — CPU of the Year</div>
       <h2>Intel Core Ultra 9 285K</h2>
-      <p>24 cores. 5.7 GHz boost. The undisputed king of performance computing — now at an unprecedented price.</p>
-      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:20px">
-        <div class="price-tag">
-          <span class="price-currency">$</span>
-          <span class="price-amount">569</span>
-        </div>
-        <span class="price-orig">$649</span>
-        <span class="save-badge">Save $80</span>
-      </div>
-      <button class="btn btn-primary" onclick="addToCart('Intel Core Ultra 9 285K', 569)">Add to Cart — $569</button>
+      <p>24 cores. 5.7 GHz boost. The undisputed king of performance computing — engineered for creators, gamers, and professionals who accept no compromise.</p>
+      <a href="#products" class="btn btn-primary" style="display:inline-block; text-align:center">View Specs</a>
     </div>
 
     <div class="banner-card banner-card-side">
       <div class="chip-art">🔥</div>
-      <div class="banner-tag">Flash Deal · Ends Soon</div>
+      <div class="banner-tag">Hot Pick · Gaming Value</div>
       <h2>AMD Ryzen 5 7600</h2>
-      <p>Best budget CPU for gaming in 2026. 6 cores, incredible value.</p>
-      <div class="price-tag" style="margin-bottom:20px">
-        <span class="price-currency">$</span>
-        <span class="price-amount">179</span>
-      </div>
-      <button class="btn btn-primary" onclick="addToCart('AMD Ryzen 5 7600', 179)">Grab the Deal</button>
+      <p>Best budget CPU for gaming in 2026. 6 cores, incredible efficiency, AM5 platform.</p>
+      <a href="#products" class="btn btn-primary" style="display:inline-block; text-align:center">View Specs</a>
     </div>
 
   </div>
@@ -1365,7 +1167,7 @@
   <div class="section-header container">
     <div>
       <div class="section-label">Product Catalogue</div>
-      <h2>Shop by Category</h2>
+      <h2>Browse by Category</h2>
       <div class="filter-tabs">
         <button class="filter-tab active" data-filter="all">All</button>
         <button class="filter-tab" data-filter="cpu">CPUs</button>
@@ -1387,9 +1189,10 @@
   <div class="compare-inner">
     <div class="section-label">CPU Showdown</div>
     <h2>Which CPU is right for you?</h2>
-    <p style="color:var(--muted); margin-top:8px; font-size:0.9rem">We break it down. No hype — just specs, performance, and price.</p>
+    <p style="color:var(--muted); margin-top:8px; font-size:0.9rem">We break it down — no hype, just specs and real-world performance.</p>
 
     <div class="compare-grid">
+
       <!-- Budget -->
       <div class="compare-card">
         <div class="compare-icon">💰</div>
@@ -1401,11 +1204,10 @@
           <div class="spec-row"><span class="sr-label">Boost Clock</span><span class="sr-val">4.7 GHz</span></div>
           <div class="spec-row"><span class="sr-label">TDP</span><span class="sr-val">58 W</span></div>
           <div class="spec-row"><span class="sr-label">L3 Cache</span><span class="sr-val">12 MB</span></div>
-          <div class="spec-row"><span class="sr-label">PCIe Gen</span><span class="sr-val">5.0</span></div>
+          <div class="spec-row"><span class="sr-label">Socket</span><span class="sr-val">LGA1700</span></div>
         </div>
-        <div class="compare-price">$109</div>
-        <p style="font-size:0.78rem; color:var(--muted); margin-top:8px">Perfect for office work, light gaming, and everyday tasks. Unbeatable at this price.</p>
-        <button class="btn btn-ghost" onclick="addToCart('Intel Core i3-14100F', 109)">Add to Cart</button>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:14px">Perfect for office work, light gaming, and everyday tasks.</p>
+        <a href="#products" class="btn btn-ghost" style="display:block; text-align:center">View Details</a>
       </div>
 
       <!-- Mid Range RECOMMENDED -->
@@ -1420,11 +1222,10 @@
           <div class="spec-row"><span class="sr-label">Boost Clock</span><span class="sr-val highlight">5.3 GHz</span></div>
           <div class="spec-row"><span class="sr-label">TDP</span><span class="sr-val">105 W</span></div>
           <div class="spec-row"><span class="sr-label">L3 Cache</span><span class="sr-val highlight">32 MB</span></div>
-          <div class="spec-row"><span class="sr-label">PCIe Gen</span><span class="sr-val">5.0</span></div>
+          <div class="spec-row"><span class="sr-label">Socket</span><span class="sr-val">AM5</span></div>
         </div>
-        <div class="compare-price" style="color:var(--accent)">$249</div>
-        <p style="font-size:0.78rem; color:var(--muted); margin-top:8px">The sweet spot for 1080p / 1440p gaming. Crushes most AAA titles at ultra settings.</p>
-        <button class="btn btn-primary" onclick="addToCart('AMD Ryzen 5 7600X', 249)">Add to Cart</button>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:14px">The sweet spot for 1080p / 1440p gaming. Crushes most AAA titles at ultra settings.</p>
+        <a href="#products" class="btn btn-primary" style="display:block; text-align:center">View Details</a>
       </div>
 
       <!-- High End -->
@@ -1438,12 +1239,12 @@
           <div class="spec-row"><span class="sr-label">Boost Clock</span><span class="sr-val">6.0 GHz</span></div>
           <div class="spec-row"><span class="sr-label">TDP</span><span class="sr-val">253 W</span></div>
           <div class="spec-row"><span class="sr-label">L3 Cache</span><span class="sr-val">36 MB</span></div>
-          <div class="spec-row"><span class="sr-label">PCIe Gen</span><span class="sr-val">5.0</span></div>
+          <div class="spec-row"><span class="sr-label">Socket</span><span class="sr-val">LGA1700</span></div>
         </div>
-        <div class="compare-price">$569</div>
-        <p style="font-size:0.78rem; color:var(--muted); margin-top:8px">3D rendering, AI workloads, 4K gaming — this chip handles it all without breaking a sweat.</p>
-        <button class="btn btn-ghost" onclick="addToCart('Intel Core i9-14900K', 569)">Add to Cart</button>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:14px">3D rendering, AI workloads, 4K gaming — handles it all without breaking a sweat.</p>
+        <a href="#products" class="btn btn-ghost" style="display:block; text-align:center">View Details</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -1453,7 +1254,7 @@
   <div class="brand-strip-inner">
     <p>Authorized Reseller of All Major Brands</p>
     <div class="brand-logos">
-      <span class="brand-logo intel">intel</span>
+      <span class="brand-logo" style="letter-spacing:0.05em">intel</span>
       <span class="brand-logo" style="font-size:1.3rem">AMD</span>
       <span class="brand-logo">ASUS</span>
       <span class="brand-logo">MSI</span>
@@ -1499,24 +1300,24 @@
 <!-- ── PROMO ── -->
 <section class="promo-strip">
   <div class="promo-inner">
-    <div class="section-label">Special Offers</div>
-    <h2>Deals handpicked this week</h2>
+    <div class="section-label">Highlighted Collections</div>
+    <h2>Platform picks this season</h2>
 
     <div class="promo-grid">
       <div class="promo-card promo-a">
         <div class="chip-art" style="top:10px; right:20px">🔵</div>
-        <div class="promo-eyebrow">Intel Platform Week</div>
-        <h3>Z790 Motherboard Bundle</h3>
-        <p>Pair any Intel 13th or 14th gen CPU with a Z790 board and save up to $60 instantly at checkout.</p>
-        <button class="btn btn-primary" onclick="addToCart('Z790 Board Bundle', 299)">Shop Intel Bundles</button>
+        <div class="promo-eyebrow">Intel Platform</div>
+        <h3>Z790 Motherboard Lineup</h3>
+        <p>Pair any Intel 13th or 14th gen CPU with a Z790 board for the ultimate DDR5 platform experience.</p>
+        <a href="#products" class="btn btn-primary" style="display:inline-block; text-align:center">Explore Intel Boards</a>
       </div>
 
       <div class="promo-card promo-b">
         <div class="chip-art" style="top:10px; right:20px">🟣</div>
-        <div class="promo-eyebrow">AMD Clearance — Limited Stock</div>
-        <h3>Ryzen 7000 Series — Up to 30% Off</h3>
-        <p>Limited stock. AM5 platform CPUs discounted to move inventory before next-gen arrives.</p>
-        <button class="btn btn-primary" style="background:linear-gradient(135deg,#7b2fff,#c44bff)" onclick="addToCart('AMD Ryzen 7000 Series', 199)">Shop AMD Deals</button>
+        <div class="promo-eyebrow">AMD AM5 Platform</div>
+        <h3>Ryzen 7000 Series</h3>
+        <p>AM5 platform with PCIe 5.0, DDR5, and next-gen efficiency — built to last through multiple CPU generations.</p>
+        <a href="#products" class="btn btn-primary" style="background:linear-gradient(135deg,#7b2fff,#c44bff); display:inline-block; text-align:center">Explore AMD CPUs</a>
       </div>
     </div>
   </div>
@@ -1526,8 +1327,8 @@
 <section class="newsletter">
   <div class="newsletter-inner">
     <div class="section-label">Stay in the loop</div>
-    <h2>Get drop alerts & exclusive deals</h2>
-    <p>New product launches, flash sales, and tech news — straight to your inbox. Unsubscribe anytime.</p>
+    <h2>Get drop alerts &amp; exclusive news</h2>
+    <p>New product launches, tech news, and build guides — straight to your inbox. Unsubscribe anytime.</p>
 
     <div class="newsletter-form">
       <input type="email" class="newsletter-input" placeholder="your@email.com" id="newsletter-email" />
@@ -1575,7 +1376,6 @@
           <li><a href="#">Build Guides</a></li>
           <li><a href="#">Warranty &amp; Returns</a></li>
           <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Track Order</a></li>
         </ul>
       </div>
     </div>
@@ -1593,13 +1393,12 @@
 </footer>
 
 <script>
-  /* ── DATA ── */
+  /* ── PRODUCT DATA (no prices) ── */
   const products = [
     {
       id: 1, cat: 'cpu', brand: 'Intel', icon: '🔵',
       name: 'Core Ultra 9 285K',
       specs: ['24 Cores', '5.7 GHz', 'LGA1851', '125W TDP'],
-      price: 569, orig: 649,
       stock: 'in', rating: 4.9, reviews: 1842,
       badges: [{ cls: 'badge-purple', label: 'Flagship' }]
     },
@@ -1607,7 +1406,6 @@
       id: 2, cat: 'cpu', brand: 'Intel', icon: '🔵',
       name: 'Core i5-14600K',
       specs: ['14 Cores', '5.3 GHz', 'LGA1700', '125W TDP'],
-      price: 249, orig: 299,
       stock: 'in', rating: 4.8, reviews: 3210,
       badges: [{ cls: 'badge-gold', label: 'Best Seller' }]
     },
@@ -1615,7 +1413,6 @@
       id: 3, cat: 'cpu', brand: 'Intel', icon: '🔵',
       name: 'Core i3-14100F',
       specs: ['4 Cores', '4.7 GHz', 'LGA1700', '58W TDP'],
-      price: 109, orig: null,
       stock: 'in', rating: 4.6, reviews: 892,
       badges: [{ cls: 'badge-green', label: 'Budget Pick' }]
     },
@@ -1623,7 +1420,6 @@
       id: 4, cat: 'cpu', brand: 'AMD', icon: '🔴',
       name: 'Ryzen 9 9950X',
       specs: ['16 Cores', '5.7 GHz', 'AM5', '170W TDP'],
-      price: 649, orig: 699,
       stock: 'low', rating: 4.9, reviews: 744,
       badges: [{ cls: 'badge-purple', label: 'Workstation' }]
     },
@@ -1631,7 +1427,6 @@
       id: 5, cat: 'cpu', brand: 'AMD', icon: '🔴',
       name: 'Ryzen 5 7600X',
       specs: ['6 Cores', '5.3 GHz', 'AM5', '105W TDP'],
-      price: 249, orig: 299,
       stock: 'in', rating: 4.8, reviews: 5612,
       badges: [{ cls: 'badge-blue', label: 'Most Popular' }]
     },
@@ -1639,7 +1434,6 @@
       id: 6, cat: 'cpu', brand: 'AMD', icon: '🔴',
       name: 'Ryzen 5 7600',
       specs: ['6 Cores', '5.1 GHz', 'AM5', '65W TDP'],
-      price: 179, orig: 229,
       stock: 'in', rating: 4.7, reviews: 2104,
       badges: [{ cls: 'badge-green', label: 'Value King' }]
     },
@@ -1647,7 +1441,6 @@
       id: 7, cat: 'motherboard', brand: 'ASUS', icon: '🟩',
       name: 'ROG Maximus Z790 Hero',
       specs: ['LGA1700', 'DDR5', 'PCIe 5.0', 'WiFi 7'],
-      price: 489, orig: 549,
       stock: 'in', rating: 4.9, reviews: 631,
       badges: [{ cls: 'badge-purple', label: 'Premium' }]
     },
@@ -1655,7 +1448,6 @@
       id: 8, cat: 'motherboard', brand: 'MSI', icon: '🟥',
       name: 'MAG X670E Tomahawk WiFi',
       specs: ['AM5', 'DDR5', 'PCIe 5.0', 'WiFi 6E'],
-      price: 279, orig: 319,
       stock: 'in', rating: 4.7, reviews: 1293,
       badges: [{ cls: 'badge-gold', label: 'Editor\'s Pick' }]
     },
@@ -1663,7 +1455,6 @@
       id: 9, cat: 'motherboard', brand: 'Gigabyte', icon: '🟦',
       name: 'B760M DS3H AX',
       specs: ['LGA1700', 'DDR4/DDR5', 'WiFi 6', 'Micro-ATX'],
-      price: 119, orig: null,
       stock: 'in', rating: 4.5, reviews: 2811,
       badges: [{ cls: 'badge-green', label: 'Budget Board' }]
     },
@@ -1671,7 +1462,6 @@
       id: 10, cat: 'memory', brand: 'Corsair', icon: '⚪',
       name: 'Vengeance DDR5-6000 32GB',
       specs: ['2x 16GB', 'DDR5', '6000 MHz', 'CL36'],
-      price: 139, orig: 169,
       stock: 'in', rating: 4.8, reviews: 3892,
       badges: [{ cls: 'badge-blue', label: 'Recommended' }]
     },
@@ -1679,7 +1469,6 @@
       id: 11, cat: 'memory', brand: 'G.Skill', icon: '⚪',
       name: 'Trident Z5 Neo 64GB',
       specs: ['2x 32GB', 'DDR5', '6000 MHz', 'CL30'],
-      price: 219, orig: 269,
       stock: 'low', rating: 4.9, reviews: 1104,
       badges: [{ cls: 'badge-purple', label: 'Enthusiast' }]
     },
@@ -1687,39 +1476,37 @@
       id: 12, cat: 'cooling', brand: 'Noctua', icon: '🟤',
       name: 'NH-D15 Chromax Black',
       specs: ['Dual Tower', '2x 140mm', 'LGA1700/AM5', '165W TDP'],
-      price: 109, orig: null,
       stock: 'in', rating: 4.9, reviews: 7881,
       badges: [{ cls: 'badge-gold', label: 'GOAT Cooler' }]
     },
   ];
 
-  /* ── TICKER ── */
+  /* ── TICKER (no prices) ── */
   const tickerData = [
-    { name: 'Core Ultra 9 285K', price: '$569', change: '-$80' },
-    { name: 'Ryzen 9 9950X', price: '$649', change: '-$50' },
-    { name: 'RTX 5090 (Coming Soon)', price: 'TBA', change: '' },
-    { name: 'ROG Maximus Z790', price: '$489', change: '-$60' },
-    { name: 'DDR5-6000 32GB', price: '$139', change: '-$30' },
-    { name: 'Core i5-14600K', price: '$249', change: '-$50' },
-    { name: 'NH-D15 Chromax Black', price: '$109', change: 'In Stock' },
-    { name: 'Ryzen 5 7600', price: '$179', change: 'Flash Deal' },
-    { name: 'MSI MAG X670E', price: '$279', change: '-$40' },
+    { name: 'Intel Core Ultra 9 285K', tag: 'New' },
+    { name: 'AMD Ryzen 9 9950X', tag: 'AM5' },
+    { name: 'ROG Maximus Z790 Hero', tag: 'WiFi 7' },
+    { name: 'Corsair Vengeance DDR5-6000', tag: 'DDR5' },
+    { name: 'Intel Core i5-14600K', tag: 'Best Seller' },
+    { name: 'Noctua NH-D15 Chromax', tag: 'In Stock' },
+    { name: 'AMD Ryzen 5 7600', tag: 'Value Pick' },
+    { name: 'MSI MAG X670E Tomahawk', tag: 'AM5 Board' },
+    { name: 'G.Skill Trident Z5 Neo 64GB', tag: 'Low Stock' },
   ];
 
   function buildTicker() {
     const track = document.getElementById('ticker');
-    const items = [...tickerData, ...tickerData]; // duplicate for seamless loop
+    const items = [...tickerData, ...tickerData];
     track.innerHTML = items.map(t => `
       <span class="ticker-item">
         <span class="ti-name">${t.name}</span>
-        <span class="ti-price">${t.price}</span>
-        ${t.change ? `<span class="badge badge-green" style="font-size:0.65rem">${t.change}</span>` : ''}
+        <span class="badge badge-blue" style="font-size:0.65rem">${t.tag}</span>
         <span class="ti-dot"></span>
       </span>
     `).join('');
   }
 
-  /* ── CPU CORES ── */
+  /* ── CPU CORES ANIMATION ── */
   function buildCPU() {
     const body = document.getElementById('cpu-cores');
     body.innerHTML = Array.from({ length: 36 }, (_, i) =>
@@ -1727,33 +1514,59 @@
     ).join('');
   }
 
-  /* ── PRODUCT CARDS ── */
-  let cartCount = 0;
-  let activeFilter = 'all';
+  /* ── WISHLIST ── */
   const wishlist = new Set();
+  let toastTimeout;
 
-  function starsHTML(n) {
-    const full = Math.floor(n);
-    const half = n % 1 >= 0.5 ? 1 : 0;
-    const empty = 5 - full - half;
-    return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+  function showNotif(title, sub) {
+    const toast = document.getElementById('notif-toast');
+    document.getElementById('toast-title').textContent = title;
+    document.getElementById('toast-sub').textContent = sub;
+    toast.classList.add('show');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => toast.classList.remove('show'), 3000);
   }
 
+  function toggleWishlist(id, btn) {
+    if (wishlist.has(id)) {
+      wishlist.delete(id);
+      btn.textContent = '♡';
+      btn.classList.remove('active');
+    } else {
+      wishlist.add(id);
+      btn.textContent = '♥';
+      btn.classList.add('active');
+      showNotif('Saved to Wishlist ♥', 'You can find it later');
+    }
+  }
+
+  /* ── STOCK HTML ── */
   function stockHTML(s) {
-    if (s === 'in') return `<div class="stock-indicator in-stock"><div class="stock-dot"></div>In Stock</div>`;
+    if (s === 'in')  return `<div class="stock-indicator in-stock"><div class="stock-dot"></div>In Stock</div>`;
     if (s === 'low') return `<div class="stock-indicator low-stock"><div class="stock-dot"></div>Low Stock</div>`;
     return `<div class="stock-indicator out-stock"><div class="stock-dot"></div>Out of Stock</div>`;
   }
 
+  /* ── STARS ── */
+  function starsHTML(n) {
+    const full = Math.floor(n);
+    const half = n % 1 >= 0.5 ? 1 : 0;
+    return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(5 - full - half);
+  }
+
+  /* ── PRODUCT CARDS ── */
+  let activeFilter = 'all';
+
   function buildProducts() {
     const grid = document.getElementById('products-grid');
     grid.innerHTML = products.map(p => `
-      <div class="product-card ${activeFilter === 'all' || p.cat === activeFilter ? 'visible' : ''}" 
+      <div class="product-card ${activeFilter === 'all' || p.cat === activeFilter ? 'visible' : ''}"
            data-cat="${p.cat}" data-id="${p.id}">
+
         <div class="card-top">
           <div class="product-icon">${p.icon}</div>
-          <button class="wishlist-btn ${wishlist.has(p.id) ? 'active' : ''}" 
-                  onclick="toggleWishlist(${p.id}, this)" title="Wishlist">
+          <button class="wishlist-btn ${wishlist.has(p.id) ? 'active' : ''}"
+                  onclick="toggleWishlist(${p.id}, this)" title="Save to wishlist">
             ${wishlist.has(p.id) ? '♥' : '♡'}
           </button>
         </div>
@@ -1767,7 +1580,7 @@
 
         <div class="rating">
           <span class="stars">${starsHTML(p.rating)}</span>
-          <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()})</span>
+          <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()} reviews)</span>
         </div>
 
         <div class="card-specs">
@@ -1775,23 +1588,24 @@
         </div>
 
         ${stockHTML(p.stock)}
-
-        <div class="card-bottom">
-          <div class="card-price-wrap">
-            <div class="card-price">$${p.price}</div>
-            ${p.orig ? `<div class="card-orig">$${p.orig}</div>` : ''}
-          </div>
-          <button class="add-btn" onclick="addToCart('${p.name}', ${p.price})" title="Add to cart">+</button>
-        </div>
       </div>
     `).join('');
+
+    /* Re-attach animations */
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(24px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s';
+      observer.observe(card);
+    });
   }
 
+  /* ── FILTER ── */
   function filterProducts(cat) {
     activeFilter = cat;
-    document.querySelectorAll('.filter-tab').forEach(t => {
-      t.classList.toggle('active', t.dataset.filter === cat);
-    });
+    document.querySelectorAll('.filter-tab').forEach(t =>
+      t.classList.toggle('active', t.dataset.filter === cat)
+    );
     document.querySelectorAll('.product-card').forEach(card => {
       const matches = cat === 'all' || card.dataset.cat === cat;
       card.classList.toggle('visible', matches);
@@ -1801,39 +1615,6 @@
   document.querySelectorAll('.filter-tab').forEach(tab => {
     tab.addEventListener('click', () => filterProducts(tab.dataset.filter));
   });
-
-  /* ── WISHLIST ── */
-  function toggleWishlist(id, btn) {
-    if (wishlist.has(id)) {
-      wishlist.delete(id);
-      btn.textContent = '♡';
-      btn.classList.remove('active');
-    } else {
-      wishlist.add(id);
-      btn.textContent = '♥';
-      btn.classList.add('active');
-      showToast('Added to Wishlist ♥', 'Saved for later');
-    }
-  }
-
-  /* ── CART ── */
-  let toastTimeout;
-  function showToast(title, sub) {
-    const toast = document.getElementById('cart-toast');
-    document.getElementById('toast-title').textContent = title;
-    document.getElementById('toast-sub').textContent = sub;
-    toast.classList.add('show');
-    clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => toast.classList.remove('show'), 3000);
-  }
-
-  function addToCart(name, price) {
-    cartCount++;
-    const counter = document.getElementById('cart-count');
-    counter.textContent = cartCount;
-    counter.classList.add('visible');
-    showToast(`${name} added!`, `$${price} — Cart (${cartCount} item${cartCount > 1 ? 's' : ''})`);
-  }
 
   /* ── NEWSLETTER ── */
   function subscribeNewsletter() {
@@ -1845,7 +1626,7 @@
       return;
     }
     input.value = '';
-    showToast('You\'re subscribed!', `Deals incoming to ${email}`);
+    showNotif('You\'re subscribed!', `Updates incoming to ${email}`);
   }
 
   /* ── MOBILE MENU ── */
@@ -1853,27 +1634,7 @@
     document.getElementById('mobile-menu').classList.toggle('open');
   }
 
-  /* ── INIT ── */
-  buildTicker();
-  buildCPU();
-  buildProducts();
-
-  /* Wire up filter tabs (after products rendered) */
-  document.querySelectorAll('.filter-tab').forEach(tab => {
-    tab.addEventListener('click', () => filterProducts(tab.dataset.filter));
-  });
-
-  /* Smooth scroll active nav highlight */
-  const sections = ['products', 'compare', 'deals'];
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY + 80;
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
-    });
-  });
-
-  /* Animate product cards on scroll */
+  /* ── SCROLL REVEAL ── */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1883,12 +1644,17 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.product-card, .compare-card, .why-card').forEach(card => {
+  document.querySelectorAll('.compare-card, .why-card').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(24px)';
     card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s';
     observer.observe(card);
   });
+
+  /* ── INIT ── */
+  buildTicker();
+  buildCPU();
+  buildProducts();
 </script>
 </body>
 </html>
