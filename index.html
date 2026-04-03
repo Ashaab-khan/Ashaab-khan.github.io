@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CoreVault — Next-Gen PC Components</title>
   <style>
-    /* ── Reset & Variables ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -17,6 +16,7 @@
       --gold:      #f5a623;
       --green:     #00e676;
       --red:       #ff4444;
+      --amazon:    #ff9900;
       --text:      #e8eaf0;
       --muted:     #7a8099;
       --border:    rgba(0,200,255,0.15);
@@ -37,13 +37,12 @@
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
-    /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 3px; }
 
-    /* ── Utility ── */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
     .badge {
       display: inline-block;
       padding: 3px 10px;
@@ -54,10 +53,10 @@
       text-transform: uppercase;
     }
     .badge-blue   { background: rgba(0,200,255,0.15); color: var(--accent); }
-    .badge-purple { background: rgba(123,47,255,0.2); color: #b57bff; }
+    .badge-purple { background: rgba(123,47,255,0.2);  color: #b57bff; }
     .badge-gold   { background: rgba(245,166,35,0.15); color: var(--gold); }
-    .badge-green  { background: rgba(0,230,118,0.12); color: var(--green); }
-    .badge-red    { background: rgba(255,68,68,0.15); color: var(--red); }
+    .badge-green  { background: rgba(0,230,118,0.12);  color: var(--green); }
+    .badge-red    { background: rgba(255,68,68,0.15);  color: var(--red); }
 
     .section-label {
       font-size: 0.75rem;
@@ -70,6 +69,44 @@
 
     h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.2; }
     h3 { font-size: 1.1rem; font-weight: 700; }
+
+    /* ── AFFILIATE BUTTON ── */
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #ff9900, #e88000);
+      color: #111;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 3px 12px rgba(255,153,0,0.3);
+      white-space: nowrap;
+    }
+    .btn-amazon:hover {
+      background: linear-gradient(135deg, #ffaa22, #ff9900);
+      transform: translateY(-1px);
+      box-shadow: 0 5px 18px rgba(255,153,0,0.45);
+      color: #000;
+    }
+    .btn-amazon:active { transform: scale(0.97); }
+    .btn-amazon-icon { font-size: 1rem; }
+
+    /* block version for compare / banner */
+    .btn-amazon-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 11px 18px;
+      margin-top: 16px;
+    }
 
     /* ── NAV ── */
     nav {
@@ -104,7 +141,6 @@
       gap: 28px;
       list-style: none;
     }
-
     .nav-links a {
       font-size: 0.9rem;
       font-weight: 500;
@@ -124,7 +160,6 @@
       border: none;
       transition: all 0.2s;
     }
-
     .btn-ghost {
       background: transparent;
       color: var(--text);
@@ -166,7 +201,6 @@
       overflow: hidden;
       padding: 80px 20px;
     }
-
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -174,7 +208,6 @@
         radial-gradient(ellipse 70% 60% at 70% 50%, rgba(123,47,255,0.18) 0%, transparent 70%),
         radial-gradient(ellipse 50% 50% at 20% 40%, rgba(0,200,255,0.12) 0%, transparent 60%);
     }
-
     .hero-grid {
       position: absolute;
       inset: 0;
@@ -184,7 +217,6 @@
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
     }
-
     .hero-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -195,7 +227,6 @@
       position: relative;
       z-index: 1;
     }
-
     .hero-eyebrow {
       display: flex;
       align-items: center;
@@ -214,20 +245,17 @@
       text-transform: uppercase;
       color: var(--accent);
     }
-
     .hero h1 {
       font-size: clamp(2.4rem, 5vw, 4rem);
       font-weight: 900;
       line-height: 1.08;
       margin-bottom: 20px;
     }
-
     .hero h1 .highlight {
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .hero p {
       font-size: 1.05rem;
       color: var(--muted);
@@ -235,15 +263,8 @@
       margin-bottom: 36px;
       line-height: 1.7;
     }
-
     .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    .btn-large {
-      padding: 14px 32px;
-      font-size: 1rem;
-      border-radius: 10px;
-    }
-
+    .btn-large { padding: 14px 32px; font-size: 1rem; border-radius: 10px; }
     .hero-stats {
       display: flex;
       gap: 32px;
@@ -251,7 +272,6 @@
       padding-top: 32px;
       border-top: 1px solid var(--border);
     }
-
     .stat-num {
       font-size: 1.8rem;
       font-weight: 900;
@@ -262,24 +282,17 @@
     .stat-label { font-size: 0.8rem; color: var(--muted); }
 
     /* CPU Visual */
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
     .cpu-3d {
       width: 280px;
       height: 280px;
       position: relative;
       animation: float 5s ease-in-out infinite;
     }
-
     @keyframes float {
       0%, 100% { transform: translateY(0) rotateY(0deg); }
       50% { transform: translateY(-16px) rotateY(8deg); }
     }
-
     .cpu-body {
       width: 200px;
       height: 200px;
@@ -287,8 +300,7 @@
       border: 2px solid rgba(0,200,255,0.4);
       border-radius: 16px;
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -300,21 +312,17 @@
         0 0 80px rgba(123,47,255,0.15),
         inset 0 0 30px rgba(0,200,255,0.05);
     }
-
     .cpu-core {
       background: linear-gradient(135deg, rgba(0,200,255,0.4), rgba(123,47,255,0.4));
       border-radius: 3px;
       animation: pulse-core 2s ease-in-out infinite;
     }
-
     @keyframes pulse-core {
       0%, 100% { opacity: 0.6; }
       50% { opacity: 1; }
     }
-
-    .cpu-core:nth-child(odd) { animation-delay: 0.5s; }
-    .cpu-core:nth-child(3n) { animation-delay: 1s; }
-
+    .cpu-core:nth-child(odd)  { animation-delay: 0.5s; }
+    .cpu-core:nth-child(3n)   { animation-delay: 1s; }
     .cpu-ring {
       position: absolute;
       border-radius: 50%;
@@ -324,21 +332,17 @@
     .cpu-ring:nth-child(1) { width: 250px; height: 250px; top: -25px; left: -15px; }
     .cpu-ring:nth-child(2) { width: 290px; height: 290px; top: -45px; left: -35px; animation-direction: reverse; animation-duration: 12s; }
     .cpu-ring:nth-child(3) { width: 330px; height: 330px; top: -65px; left: -55px; animation-duration: 20s; border-color: rgba(123,47,255,0.15); }
-
     @keyframes spin-ring {
       from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      to   { transform: rotate(360deg); }
     }
-
     .cpu-dot {
       position: absolute;
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       background: var(--accent);
       border-radius: 50%;
       box-shadow: 0 0 8px var(--accent);
-      top: 0;
-      left: 50%;
+      top: 0; left: 50%;
       transform: translateX(-50%);
     }
 
@@ -350,18 +354,15 @@
       overflow: hidden;
       padding: 10px 0;
     }
-
     .ticker-track {
       display: flex;
       animation: ticker 25s linear infinite;
       white-space: nowrap;
     }
-
     @keyframes ticker {
       from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      to   { transform: translateX(-50%); }
     }
-
     .ticker-item {
       display: inline-flex;
       align-items: center;
@@ -372,19 +373,10 @@
       color: var(--muted);
     }
     .ticker-item .ti-name { color: var(--text); }
-    .ticker-item .ti-dot {
-      width: 4px;
-      height: 4px;
-      background: var(--border);
-      border-radius: 50%;
-    }
+    .ticker-item .ti-dot  { width: 4px; height: 4px; background: var(--border); border-radius: 50%; }
 
     /* ── FEATURED BANNER ── */
-    .featured-banner {
-      margin: 60px 0;
-      padding: 0 20px;
-    }
-
+    .featured-banner { margin: 60px 0; padding: 0 20px; }
     .banner-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -392,7 +384,6 @@
       grid-template-columns: 2fr 1fr;
       gap: 20px;
     }
-
     .banner-card {
       border-radius: var(--radius);
       padding: 48px 40px;
@@ -403,32 +394,26 @@
       flex-direction: column;
       justify-content: flex-end;
     }
-
     .banner-card-main {
       background:
         linear-gradient(135deg, rgba(0,200,255,0.08) 0%, rgba(123,47,255,0.12) 100%),
         var(--surface2);
       border: 1px solid rgba(0,200,255,0.2);
     }
-
     .banner-card-main::before {
       content: '';
       position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 280px;
-      height: 280px;
+      top: -40px; right: -40px;
+      width: 280px; height: 280px;
       background: radial-gradient(circle, rgba(0,200,255,0.15) 0%, transparent 70%);
       border-radius: 50%;
     }
-
     .banner-card-side {
       background:
         linear-gradient(135deg, rgba(245,166,35,0.08) 0%, rgba(255,100,0,0.08) 100%),
         var(--surface2);
       border: 1px solid rgba(245,166,35,0.2);
     }
-
     .banner-tag {
       font-size: 0.7rem;
       font-weight: 700;
@@ -438,32 +423,28 @@
       margin-bottom: 10px;
     }
     .banner-card-side .banner-tag { color: var(--gold); }
-
     .banner-card h2 {
       font-size: clamp(1.4rem, 2.5vw, 2rem);
       font-weight: 900;
       margin-bottom: 8px;
     }
-
     .banner-card p {
       color: var(--muted);
       font-size: 0.9rem;
       margin-bottom: 20px;
       max-width: 360px;
     }
-
     .chip-art {
       position: absolute;
-      top: 20px;
-      right: 30px;
+      top: 20px; right: 30px;
       font-size: 80px;
       opacity: 0.12;
       filter: blur(1px);
     }
+    .banner-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
-    /* ── PRODUCTS SECTION ── */
+    /* ── PRODUCTS ── */
     .products-section { padding: 80px 20px; }
-
     .section-header {
       max-width: 1200px;
       margin: 0 auto 40px;
@@ -471,14 +452,7 @@
       align-items: flex-end;
       justify-content: space-between;
     }
-
-    .filter-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
+    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
     .filter-tab {
       padding: 7px 18px;
       border-radius: 50px;
@@ -490,14 +464,12 @@
       color: var(--muted);
       transition: all 0.2s;
     }
-
     .filter-tab:hover,
     .filter-tab.active {
       border-color: var(--accent);
       color: var(--accent);
       background: rgba(0,200,255,0.08);
     }
-
     .view-all-link {
       font-size: 0.875rem;
       color: var(--accent);
@@ -513,10 +485,9 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 20px;
     }
-
     .product-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -527,9 +498,7 @@
       overflow: hidden;
       display: none;
     }
-
     .product-card.visible { display: block; }
-
     .product-card::before {
       content: '';
       position: absolute;
@@ -538,7 +507,6 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-
     .product-card:hover {
       border-color: rgba(0,200,255,0.35);
       transform: translateY(-4px);
@@ -552,30 +520,22 @@
       justify-content: space-between;
       margin-bottom: 20px;
     }
-
     .product-icon {
-      width: 64px;
-      height: 64px;
+      width: 64px; height: 64px;
       background: var(--surface2);
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 28px;
       border: 1px solid var(--border);
     }
-
     .wishlist-btn {
-      width: 34px;
-      height: 34px;
+      width: 34px; height: 34px;
       border-radius: 8px;
       background: var(--surface2);
       border: 1px solid var(--border);
       color: var(--muted);
       font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       cursor: pointer;
       transition: all 0.2s;
     }
@@ -590,7 +550,6 @@
       color: var(--muted);
       margin-bottom: 6px;
     }
-
     .card-name {
       font-size: 1rem;
       font-weight: 700;
@@ -598,14 +557,7 @@
       margin-bottom: 10px;
       line-height: 1.3;
     }
-
-    .card-specs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
+    .card-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
     .spec-pill {
       font-size: 0.7rem;
       padding: 3px 8px;
@@ -621,7 +573,7 @@
       gap: 6px;
       font-size: 0.72rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 14px;
     }
     .stock-dot { width: 6px; height: 6px; border-radius: 50%; }
     .in-stock  { color: var(--green); }
@@ -636,12 +588,7 @@
       50% { opacity: 0.4; }
     }
 
-    .rating {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 12px;
-    }
+    .rating { display: flex; align-items: center; gap: 4px; margin-bottom: 12px; }
     .stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 1px; }
     .rating-count { font-size: 0.72rem; color: var(--muted); }
 
@@ -654,26 +601,20 @@
       position: relative;
       overflow: hidden;
     }
-
     .compare-banner::before {
       content: '';
       position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 400px;
-      height: 400px;
+      top: -100px; left: -100px;
+      width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(0,200,255,0.06) 0%, transparent 70%);
     }
-
     .compare-inner { max-width: 1200px; margin: 0 auto; }
-
     .compare-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       margin-top: 40px;
     }
-
     .compare-card {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -682,16 +623,13 @@
       position: relative;
       transition: all 0.3s;
     }
-
     .compare-card.recommended {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(0,200,255,0.2), 0 8px 32px rgba(0,200,255,0.1);
     }
-
     .recommended-tag {
       position: absolute;
-      top: -12px;
-      left: 50%;
+      top: -12px; left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff;
@@ -703,7 +641,6 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-
     .compare-icon { font-size: 40px; margin-bottom: 16px; }
     .compare-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
     .compare-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; }
@@ -721,13 +658,9 @@
     .spec-row .sr-val { font-weight: 600; color: var(--text); }
     .spec-row .sr-val.highlight { color: var(--accent); }
 
-    .compare-card .btn { width: 100%; margin-top: 20px; text-align: center; }
-
     /* ── BRAND STRIP ── */
     .brand-strip { padding: 50px 20px; }
-
     .brand-strip-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
-
     .brand-strip p {
       font-size: 0.78rem;
       color: var(--muted);
@@ -735,15 +668,7 @@
       text-transform: uppercase;
       margin-bottom: 32px;
     }
-
-    .brand-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
+    .brand-logos { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
     .brand-logo {
       font-size: 1.4rem;
       font-weight: 900;
@@ -760,16 +685,13 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-
     .why-inner { max-width: 1200px; margin: 0 auto; }
-
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 24px;
       margin-top: 50px;
     }
-
     .why-card {
       padding: 28px 24px;
       background: var(--bg);
@@ -778,34 +700,27 @@
       transition: all 0.3s;
     }
     .why-card:hover { border-color: rgba(0,200,255,0.3); transform: translateY(-3px); }
-
     .why-icon {
-      width: 50px;
-      height: 50px;
+      width: 50px; height: 50px;
       border-radius: 12px;
       background: linear-gradient(135deg, rgba(0,200,255,0.15), rgba(123,47,255,0.15));
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 22px;
       margin-bottom: 18px;
       border: 1px solid var(--border);
     }
-
     .why-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
-    .why-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .why-card p  { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
     /* ── PROMO ── */
     .promo-strip { padding: 80px 20px; }
     .promo-inner { max-width: 1200px; margin: 0 auto; }
-
     .promo-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
       margin-top: 40px;
     }
-
     .promo-card {
       border-radius: var(--radius);
       padding: 40px 36px;
@@ -816,19 +731,15 @@
       flex-direction: column;
       justify-content: flex-end;
     }
-
     .promo-a {
       background: linear-gradient(135deg, #00102a, #001840);
       border: 1px solid rgba(0,200,255,0.25);
     }
-
     .promo-b {
       background: linear-gradient(135deg, #1a0a2e, #0f0520);
       border: 1px solid rgba(123,47,255,0.25);
     }
-
     .promo-card .chip-art { font-size: 100px; opacity: 0.08; }
-
     .promo-eyebrow {
       font-size: 0.72rem;
       font-weight: 700;
@@ -836,22 +747,11 @@
       text-transform: uppercase;
       margin-bottom: 8px;
     }
-
     .promo-a .promo-eyebrow { color: var(--accent); }
     .promo-b .promo-eyebrow { color: #b57bff; }
-
-    .promo-card h3 {
-      font-size: clamp(1.2rem, 2vw, 1.6rem);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .promo-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-      max-width: 300px;
-    }
+    .promo-card h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 800; margin-bottom: 8px; }
+    .promo-card p  { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; max-width: 300px; }
+    .promo-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
     /* ── NEWSLETTER ── */
     .newsletter {
@@ -859,18 +759,10 @@
       background: var(--surface);
       border-top: 1px solid var(--border);
     }
-
     .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
     .newsletter h2 { margin-bottom: 12px; }
-    .newsletter p { color: var(--muted); margin-bottom: 32px; }
-
-    .newsletter-form {
-      display: flex;
-      gap: 10px;
-      max-width: 460px;
-      margin: 0 auto;
-    }
-
+    .newsletter p  { color: var(--muted); margin-bottom: 32px; }
+    .newsletter-form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
     .newsletter-input {
       flex: 1;
       padding: 12px 18px;
@@ -892,16 +784,13 @@
       border-top: 1px solid var(--border);
       padding: 60px 20px 30px;
     }
-
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-
     .footer-top {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 40px;
       margin-bottom: 48px;
     }
-
     .footer-brand p {
       font-size: 0.85rem;
       color: var(--muted);
@@ -909,7 +798,6 @@
       max-width: 240px;
       line-height: 1.7;
     }
-
     .footer-logo {
       font-size: 1.4rem;
       font-weight: 900;
@@ -918,7 +806,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .footer-col h4 {
       font-size: 0.82rem;
       font-weight: 700;
@@ -927,12 +814,10 @@
       color: var(--muted);
       margin-bottom: 16px;
     }
-
     .footer-col ul { list-style: none; }
     .footer-col li { margin-bottom: 10px; }
     .footer-col a { font-size: 0.875rem; color: var(--muted); transition: color 0.2s; }
     .footer-col a:hover { color: var(--text); }
-
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -942,17 +827,13 @@
       font-size: 0.8rem;
       color: var(--muted);
     }
-
     .social-links { display: flex; gap: 12px; }
     .social-link {
-      width: 34px;
-      height: 34px;
+      width: 34px; height: 34px;
       border-radius: 8px;
       background: var(--surface);
       border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: var(--muted);
       font-size: 0.85rem;
       font-weight: 700;
@@ -960,11 +841,10 @@
     }
     .social-link:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── TOAST (wishlist only) ── */
+    /* ── TOAST ── */
     #notif-toast {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 30px; right: 30px;
       background: var(--surface2);
       border: 1px solid var(--accent);
       border-radius: 12px;
@@ -1012,43 +892,124 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero-content   { grid-template-columns: 1fr; }
-      .hero-visual    { display: none; }
-      .banner-grid    { grid-template-columns: 1fr; }
-      .compare-grid   { grid-template-columns: 1fr; }
-      .promo-grid     { grid-template-columns: 1fr; }
-      .footer-top     { grid-template-columns: 1fr 1fr; }
-      .nav-links      { display: none; }
-      .hamburger      { display: flex; }
+    /* ── BUYER'S GUIDES ── */
+    .guides-section {
+      padding: 80px 20px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .guides-inner { max-width: 1200px; margin: 0 auto; }
+    .guides-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 8px;
+      margin-bottom: 40px;
+    }
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .guide-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s;
+    }
+    .guide-card:hover {
+      border-color: rgba(0,200,255,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .guide-icon { font-size: 36px; margin-bottom: 14px; }
+    .guide-badge { margin-bottom: 12px; }
+    .guide-card h3 { font-size: 1.05rem; margin-bottom: 12px; color: var(--text); }
+    .guide-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
     }
 
+    /* ── TRUST SECTION ── */
+    .trust-section {
+      background: var(--surface);
+      border-top: 2px solid rgba(0,200,255,0.2);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 20px;
+    }
+    .trust-inner { max-width: 1200px; margin: 0 auto; }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .trust-block { display: flex; flex-direction: column; gap: 12px; }
+    .trust-icon { font-size: 32px; }
+    .trust-block h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .trust-block p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .trust-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+      word-break: break-all;
+    }
+    .trust-email:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-content  { grid-template-columns: 1fr; }
+      .hero-visual   { display: none; }
+      .banner-grid   { grid-template-columns: 1fr; }
+      .compare-grid  { grid-template-columns: 1fr; }
+      .promo-grid    { grid-template-columns: 1fr; }
+      .footer-top    { grid-template-columns: 1fr 1fr; }
+      .nav-links     { display: none; }
+      .hamburger     { display: flex; }
+      .guides-grid   { grid-template-columns: 1fr; }
+      .trust-grid    { grid-template-columns: 1fr; gap: 32px; }
+    }
     @media (max-width: 600px) {
-      .footer-top     { grid-template-columns: 1fr; }
-      .footer-bottom  { flex-direction: column; gap: 16px; text-align: center; }
-      .newsletter-form{ flex-direction: column; }
-      .hero-stats     { gap: 20px; }
-      .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .footer-top      { grid-template-columns: 1fr; }
+      .footer-bottom   { flex-direction: column; gap: 16px; text-align: center; }
+      .newsletter-form { flex-direction: column; }
+      .hero-stats      { gap: 20px; }
+      .section-header  { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .banner-actions,
+      .promo-actions   { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── NOTIFICATION TOAST (wishlist only) ── -->
+<!-- TOAST -->
 <div id="notif-toast">
   <div class="toast-icon">♥</div>
   <div>
     <div class="toast-title" id="toast-title">Saved!</div>
-    <div class="toast-sub" id="toast-sub">Added to your wishlist</div>
+    <div class="toast-sub"  id="toast-sub">Added to your wishlist</div>
   </div>
 </div>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="logo">CoreVault</div>
-
     <ul class="nav-links">
       <li><a href="#products">CPUs</a></li>
       <li><a href="#products">Motherboards</a></li>
@@ -1056,7 +1017,6 @@
       <li><a href="#compare">Compare</a></li>
       <li><a href="#deals">Deals</a></li>
     </ul>
-
     <div class="nav-actions">
       <button class="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -1065,64 +1025,36 @@
   </div>
 </nav>
 
-<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#products" onclick="toggleMenu()">CPUs</a>
   <a href="#products" onclick="toggleMenu()">Motherboards</a>
   <a href="#products" onclick="toggleMenu()">Memory</a>
-  <a href="#compare" onclick="toggleMenu()">Compare</a>
-  <a href="#deals" onclick="toggleMenu()">Deals</a>
+  <a href="#compare"  onclick="toggleMenu()">Compare</a>
+  <a href="#deals"    onclick="toggleMenu()">Deals</a>
 </div>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-
   <div class="hero-content container" style="width:100%">
     <div class="hero-text">
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-line"></div>
         <span>New Arrivals 2026</span>
       </div>
-
-      <h1>
-        Build Your <br>
-        <span class="highlight">Dream Rig.</span><br>
-        Dominate Everything.
-      </h1>
-
-      <p>
-        From budget-friendly workhorses to elite silicon monsters —
-        CoreVault stocks the CPUs, motherboards, and memory your build deserves.
-        Curated. Tested. Delivered fast.
-      </p>
-
+      <h1>Build Your <br><span class="highlight">Dream Rig.</span><br>Dominate Everything.</h1>
+      <p>From budget-friendly workhorses to elite silicon monsters — CoreVault stocks the CPUs, motherboards, and memory your build deserves. Curated. Tested. Delivered fast.</p>
       <div class="hero-cta">
-        <button class="btn btn-primary btn-large" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-          Browse Components
-        </button>
-        <button class="btn btn-ghost btn-large" onclick="document.getElementById('compare').scrollIntoView({behavior:'smooth'})">
-          Compare CPUs
-        </button>
+        <button class="btn btn-primary btn-large" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Browse Components</button>
+        <button class="btn btn-ghost  btn-large" onclick="document.getElementById('compare').scrollIntoView({behavior:'smooth'})">Compare CPUs</button>
       </div>
-
       <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">2,400+</div>
-          <div class="stat-label">Products catalogued</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">48h</div>
-          <div class="stat-label">Express delivery</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">99.2%</div>
-          <div class="stat-label">Customer satisfaction</div>
-        </div>
+        <div><div class="stat-num">2,400+</div><div class="stat-label">Products catalogued</div></div>
+        <div><div class="stat-num">48h</div><div class="stat-label">Express delivery</div></div>
+        <div><div class="stat-num">99.2%</div><div class="stat-label">Customer satisfaction</div></div>
       </div>
     </div>
-
     <div class="hero-visual">
       <div class="cpu-3d">
         <div class="cpu-ring"><div class="cpu-dot"></div></div>
@@ -1134,12 +1066,12 @@
   </div>
 </section>
 
-<!-- ── TICKER ── -->
+<!-- TICKER -->
 <div class="ticker-bar">
   <div class="ticker-track" id="ticker"></div>
 </div>
 
-<!-- ── FEATURED BANNER ── -->
+<!-- FEATURED BANNER -->
 <div class="featured-banner" id="deals">
   <div class="banner-grid container">
 
@@ -1148,7 +1080,11 @@
       <div class="banner-tag">★ Editor's Pick — CPU of the Year</div>
       <h2>Intel Core Ultra 9 285K</h2>
       <p>24 cores. 5.7 GHz boost. The undisputed king of performance computing — engineered for creators, gamers, and professionals who accept no compromise.</p>
-      <a href="#products" class="btn btn-primary" style="display:inline-block; text-align:center">View Specs</a>
+      <div class="banner-actions">
+        <a href="https://www.amazon.com/s?k=Intel+Core+Ultra+9+285K" target="_blank" class="btn-amazon">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+        </a>
+      </div>
     </div>
 
     <div class="banner-card banner-card-side">
@@ -1156,13 +1092,17 @@
       <div class="banner-tag">Hot Pick · Gaming Value</div>
       <h2>AMD Ryzen 5 7600</h2>
       <p>Best budget CPU for gaming in 2026. 6 cores, incredible efficiency, AM5 platform.</p>
-      <a href="#products" class="btn btn-primary" style="display:inline-block; text-align:center">View Specs</a>
+      <div class="banner-actions">
+        <a href="https://www.amazon.com/s?k=AMD+Ryzen+5+7600" target="_blank" class="btn-amazon">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+        </a>
+      </div>
     </div>
 
   </div>
 </div>
 
-<!-- ── PRODUCTS ── -->
+<!-- PRODUCTS -->
 <section class="products-section" id="products">
   <div class="section-header container">
     <div>
@@ -1178,13 +1118,10 @@
     </div>
     <a href="#" class="view-all-link">View all products →</a>
   </div>
-
-  <div class="products-grid container" id="products-grid">
-    <!-- Injected by JS -->
-  </div>
+  <div class="products-grid container" id="products-grid"></div>
 </section>
 
-<!-- ── COMPARE ── -->
+<!-- COMPARE -->
 <section class="compare-banner" id="compare">
   <div class="compare-inner">
     <div class="section-label">CPU Showdown</div>
@@ -1193,7 +1130,6 @@
 
     <div class="compare-grid">
 
-      <!-- Budget -->
       <div class="compare-card">
         <div class="compare-icon">💰</div>
         <span class="badge badge-green" style="margin-bottom:12px">Budget Pick</span>
@@ -1207,10 +1143,11 @@
           <div class="spec-row"><span class="sr-label">Socket</span><span class="sr-val">LGA1700</span></div>
         </div>
         <p style="font-size:0.78rem; color:var(--muted); margin-top:14px">Perfect for office work, light gaming, and everyday tasks.</p>
-        <a href="#products" class="btn btn-ghost" style="display:block; text-align:center">View Details</a>
+        <a href="https://www.amazon.com/s?k=Intel+Core+i3-14100F" target="_blank" class="btn-amazon btn-amazon-block">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+        </a>
       </div>
 
-      <!-- Mid Range RECOMMENDED -->
       <div class="compare-card recommended">
         <div class="recommended-tag">★ Most Popular</div>
         <div class="compare-icon">🚀</div>
@@ -1225,10 +1162,11 @@
           <div class="spec-row"><span class="sr-label">Socket</span><span class="sr-val">AM5</span></div>
         </div>
         <p style="font-size:0.78rem; color:var(--muted); margin-top:14px">The sweet spot for 1080p / 1440p gaming. Crushes most AAA titles at ultra settings.</p>
-        <a href="#products" class="btn btn-primary" style="display:block; text-align:center">View Details</a>
+        <a href="https://www.amazon.com/s?k=AMD+Ryzen+5+7600X" target="_blank" class="btn-amazon btn-amazon-block">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+        </a>
       </div>
 
-      <!-- High End -->
       <div class="compare-card">
         <div class="compare-icon">👑</div>
         <span class="badge badge-purple" style="margin-bottom:12px">Enthusiast</span>
@@ -1242,14 +1180,16 @@
           <div class="spec-row"><span class="sr-label">Socket</span><span class="sr-val">LGA1700</span></div>
         </div>
         <p style="font-size:0.78rem; color:var(--muted); margin-top:14px">3D rendering, AI workloads, 4K gaming — handles it all without breaking a sweat.</p>
-        <a href="#products" class="btn btn-ghost" style="display:block; text-align:center">View Details</a>
+        <a href="https://www.amazon.com/s?k=Intel+Core+i9-14900K" target="_blank" class="btn-amazon btn-amazon-block">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+        </a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── BRAND STRIP ── -->
+<!-- BRAND STRIP -->
 <div class="brand-strip">
   <div class="brand-strip-inner">
     <p>Authorized Reseller of All Major Brands</p>
@@ -1266,12 +1206,11 @@
   </div>
 </div>
 
-<!-- ── WHY US ── -->
+<!-- WHY US -->
 <section class="why-section">
   <div class="why-inner">
     <div class="section-label">Why CoreVault</div>
     <h2>We're not just a shop.</h2>
-
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">✅</div>
@@ -1297,39 +1236,44 @@
   </div>
 </section>
 
-<!-- ── PROMO ── -->
+<!-- PROMO -->
 <section class="promo-strip">
   <div class="promo-inner">
     <div class="section-label">Highlighted Collections</div>
     <h2>Platform picks this season</h2>
-
     <div class="promo-grid">
       <div class="promo-card promo-a">
         <div class="chip-art" style="top:10px; right:20px">🔵</div>
         <div class="promo-eyebrow">Intel Platform</div>
         <h3>Z790 Motherboard Lineup</h3>
         <p>Pair any Intel 13th or 14th gen CPU with a Z790 board for the ultimate DDR5 platform experience.</p>
-        <a href="#products" class="btn btn-primary" style="display:inline-block; text-align:center">Explore Intel Boards</a>
+        <div class="promo-actions">
+          <a href="https://www.amazon.com/s?k=Z790+Motherboard" target="_blank" class="btn-amazon">
+            <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+          </a>
+        </div>
       </div>
-
       <div class="promo-card promo-b">
         <div class="chip-art" style="top:10px; right:20px">🟣</div>
         <div class="promo-eyebrow">AMD AM5 Platform</div>
         <h3>Ryzen 7000 Series</h3>
         <p>AM5 platform with PCIe 5.0, DDR5, and next-gen efficiency — built to last through multiple CPU generations.</p>
-        <a href="#products" class="btn btn-primary" style="background:linear-gradient(135deg,#7b2fff,#c44bff); display:inline-block; text-align:center">Explore AMD CPUs</a>
+        <div class="promo-actions">
+          <a href="https://www.amazon.com/s?k=AMD+Ryzen+7000+Series" target="_blank" class="btn-amazon">
+            <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── NEWSLETTER ── -->
+<!-- NEWSLETTER -->
 <section class="newsletter">
   <div class="newsletter-inner">
     <div class="section-label">Stay in the loop</div>
     <h2>Get drop alerts &amp; exclusive news</h2>
     <p>New product launches, tech news, and build guides — straight to your inbox. Unsubscribe anytime.</p>
-
     <div class="newsletter-form">
       <input type="email" class="newsletter-input" placeholder="your@email.com" id="newsletter-email" />
       <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
@@ -1338,7 +1282,82 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- BUYER'S GUIDES -->
+<section class="guides-section">
+  <div class="guides-inner">
+    <div class="section-label">Handpicked for India</div>
+    <h2>Budget Buyer's Guides</h2>
+    <p class="guides-sub">Real recommendations for Indian buyers — tested specs, honest picks, best value for money.</p>
+
+    <div class="guides-grid">
+
+      <div class="guide-card">
+        <div class="guide-icon">🔵</div>
+        <div class="guide-badge badge badge-green">Best CPU Under ₹5,000</div>
+        <h3>Intel Core i3-12100F</h3>
+        <p>The i3-12100F is the undisputed budget king in India — 4 cores, 8 threads, and strong single-core performance for gaming and everyday tasks. It runs cool, draws little power, and pairs perfectly with any B660 board. Grab it on Amazon India for under ₹5,000 and build a rig that punches way above its price tag.</p>
+        <a href="https://www.amazon.in/s?k=Intel+Core+i3+12100F" target="_blank" class="btn-amazon" style="margin-top:16px; width:100%; justify-content:center">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon India
+        </a>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">🟩</div>
+        <div class="guide-badge badge badge-blue">Best Motherboard for Ryzen 7</div>
+        <h3>MSI B550M Pro-VDH WiFi</h3>
+        <p>If you're running a Ryzen 7 5700X or 5800X, the MSI B550M Pro-VDH WiFi is your best value board in India. It offers PCIe 4.0 support, built-in WiFi, solid VRM for stable power delivery, and great BIOS options for tweaking memory speeds. Available widely across Indian retailers and Amazon India at a fair price point.</p>
+        <a href="https://www.amazon.in/s?k=MSI+B550M+Pro+VDH+WiFi" target="_blank" class="btn-amazon" style="margin-top:16px; width:100%; justify-content:center">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon India
+        </a>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">⚪</div>
+        <div class="guide-badge badge badge-gold">Best RAM Under ₹2,000</div>
+        <h3>Crucial 8GB DDR4-3200</h3>
+        <p>For builders on a tight budget, Crucial's 8GB DDR4 3200MHz stick is the most reliable option under ₹2,000 in India. It's compatible with virtually every Intel and AMD platform, runs stable out of the box with no tuning needed, and Crucial's lifetime warranty means you're covered long-term. Pair two sticks for dual-channel performance.</p>
+        <a href="https://www.amazon.in/s?k=Crucial+8GB+DDR4+3200+RAM" target="_blank" class="btn-amazon" style="margin-top:16px; width:100%; justify-content:center">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon India
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / ABOUT / DISCLAIMER -->
+<section class="trust-section">
+  <div class="trust-inner">
+
+    <div class="trust-grid">
+
+      <div class="trust-block">
+        <div class="trust-icon">🇮🇳</div>
+        <h4>About CoreVault</h4>
+        <p>CoreVault helps you find the best budget PC components and tech deals in India. We research, compare, and curate the top picks across CPUs, motherboards, RAM, and cooling — so you don't have to spend hours doing it yourself. Built by enthusiasts, for Indian builders who want the most from every rupee spent.</p>
+      </div>
+
+      <div class="trust-block">
+        <div class="trust-icon">📬</div>
+        <h4>Contact Us</h4>
+        <p>Have a question, suggestion, or want a custom build recommendation? We'd love to hear from you.</p>
+        <a href="mailto:ashaabkhanckp@gmail.com" class="trust-email">
+          ✉ ashaabkhanckp@gmail.com
+        </a>
+      </div>
+
+      <div class="trust-block">
+        <div class="trust-icon">⚠️</div>
+        <h4>Disclaimer</h4>
+        <p>As an Amazon Associate, I earn from qualifying purchases. All product links on this site are affiliate links — clicking them and making a purchase helps support CoreVault at no extra cost to you. We only recommend products we genuinely believe offer great value.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -1346,7 +1365,6 @@
         <div class="footer-logo">CoreVault</div>
         <p>The premium destination for PC enthusiasts, builders, and professionals worldwide since 2019.</p>
       </div>
-
       <div class="footer-col">
         <h4>Products</h4>
         <ul>
@@ -1357,7 +1375,6 @@
           <li><a href="#">PC Cases</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Brands</h4>
         <ul>
@@ -1368,7 +1385,6 @@
           <li><a href="#">Corsair</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Support</h4>
         <ul>
@@ -1379,7 +1395,6 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <span>© 2026 CoreVault Ltd. All rights reserved.</span>
       <div class="social-links">
@@ -1393,105 +1408,117 @@
 </footer>
 
 <script>
-  /* ── PRODUCT DATA (no prices) ── */
+  /* ── PRODUCT DATA ── */
   const products = [
     {
       id: 1, cat: 'cpu', brand: 'Intel', icon: '🔵',
       name: 'Core Ultra 9 285K',
       specs: ['24 Cores', '5.7 GHz', 'LGA1851', '125W TDP'],
       stock: 'in', rating: 4.9, reviews: 1842,
-      badges: [{ cls: 'badge-purple', label: 'Flagship' }]
+      badges: [{ cls: 'badge-purple', label: 'Flagship' }],
+      amazon: 'https://www.amazon.com/s?k=Intel+Core+Ultra+9+285K'
     },
     {
       id: 2, cat: 'cpu', brand: 'Intel', icon: '🔵',
       name: 'Core i5-14600K',
       specs: ['14 Cores', '5.3 GHz', 'LGA1700', '125W TDP'],
       stock: 'in', rating: 4.8, reviews: 3210,
-      badges: [{ cls: 'badge-gold', label: 'Best Seller' }]
+      badges: [{ cls: 'badge-gold', label: 'Best Seller' }],
+      amazon: 'https://www.amazon.com/s?k=Intel+Core+i5-14600K'
     },
     {
       id: 3, cat: 'cpu', brand: 'Intel', icon: '🔵',
       name: 'Core i3-14100F',
       specs: ['4 Cores', '4.7 GHz', 'LGA1700', '58W TDP'],
       stock: 'in', rating: 4.6, reviews: 892,
-      badges: [{ cls: 'badge-green', label: 'Budget Pick' }]
+      badges: [{ cls: 'badge-green', label: 'Budget Pick' }],
+      amazon: 'https://www.amazon.com/s?k=Intel+Core+i3-14100F'
     },
     {
       id: 4, cat: 'cpu', brand: 'AMD', icon: '🔴',
       name: 'Ryzen 9 9950X',
       specs: ['16 Cores', '5.7 GHz', 'AM5', '170W TDP'],
       stock: 'low', rating: 4.9, reviews: 744,
-      badges: [{ cls: 'badge-purple', label: 'Workstation' }]
+      badges: [{ cls: 'badge-purple', label: 'Workstation' }],
+      amazon: 'https://www.amazon.com/s?k=AMD+Ryzen+9+9950X'
     },
     {
       id: 5, cat: 'cpu', brand: 'AMD', icon: '🔴',
       name: 'Ryzen 5 7600X',
       specs: ['6 Cores', '5.3 GHz', 'AM5', '105W TDP'],
       stock: 'in', rating: 4.8, reviews: 5612,
-      badges: [{ cls: 'badge-blue', label: 'Most Popular' }]
+      badges: [{ cls: 'badge-blue', label: 'Most Popular' }],
+      amazon: 'https://www.amazon.com/s?k=AMD+Ryzen+5+7600X'
     },
     {
       id: 6, cat: 'cpu', brand: 'AMD', icon: '🔴',
       name: 'Ryzen 5 7600',
       specs: ['6 Cores', '5.1 GHz', 'AM5', '65W TDP'],
       stock: 'in', rating: 4.7, reviews: 2104,
-      badges: [{ cls: 'badge-green', label: 'Value King' }]
+      badges: [{ cls: 'badge-green', label: 'Value King' }],
+      amazon: 'https://www.amazon.com/s?k=AMD+Ryzen+5+7600'
     },
     {
       id: 7, cat: 'motherboard', brand: 'ASUS', icon: '🟩',
       name: 'ROG Maximus Z790 Hero',
       specs: ['LGA1700', 'DDR5', 'PCIe 5.0', 'WiFi 7'],
       stock: 'in', rating: 4.9, reviews: 631,
-      badges: [{ cls: 'badge-purple', label: 'Premium' }]
+      badges: [{ cls: 'badge-purple', label: 'Premium' }],
+      amazon: 'https://www.amazon.com/s?k=ASUS+ROG+Maximus+Z790+Hero'
     },
     {
       id: 8, cat: 'motherboard', brand: 'MSI', icon: '🟥',
       name: 'MAG X670E Tomahawk WiFi',
       specs: ['AM5', 'DDR5', 'PCIe 5.0', 'WiFi 6E'],
       stock: 'in', rating: 4.7, reviews: 1293,
-      badges: [{ cls: 'badge-gold', label: 'Editor\'s Pick' }]
+      badges: [{ cls: 'badge-gold', label: "Editor's Pick" }],
+      amazon: 'https://www.amazon.com/s?k=MSI+MAG+X670E+Tomahawk+WiFi'
     },
     {
       id: 9, cat: 'motherboard', brand: 'Gigabyte', icon: '🟦',
       name: 'B760M DS3H AX',
       specs: ['LGA1700', 'DDR4/DDR5', 'WiFi 6', 'Micro-ATX'],
       stock: 'in', rating: 4.5, reviews: 2811,
-      badges: [{ cls: 'badge-green', label: 'Budget Board' }]
+      badges: [{ cls: 'badge-green', label: 'Budget Board' }],
+      amazon: 'https://www.amazon.com/s?k=Gigabyte+B760M+DS3H+AX'
     },
     {
       id: 10, cat: 'memory', brand: 'Corsair', icon: '⚪',
       name: 'Vengeance DDR5-6000 32GB',
       specs: ['2x 16GB', 'DDR5', '6000 MHz', 'CL36'],
       stock: 'in', rating: 4.8, reviews: 3892,
-      badges: [{ cls: 'badge-blue', label: 'Recommended' }]
+      badges: [{ cls: 'badge-blue', label: 'Recommended' }],
+      amazon: 'https://www.amazon.com/s?k=Corsair+Vengeance+DDR5+6000+32GB'
     },
     {
       id: 11, cat: 'memory', brand: 'G.Skill', icon: '⚪',
       name: 'Trident Z5 Neo 64GB',
       specs: ['2x 32GB', 'DDR5', '6000 MHz', 'CL30'],
       stock: 'low', rating: 4.9, reviews: 1104,
-      badges: [{ cls: 'badge-purple', label: 'Enthusiast' }]
+      badges: [{ cls: 'badge-purple', label: 'Enthusiast' }],
+      amazon: 'https://www.amazon.com/s?k=G.Skill+Trident+Z5+Neo+64GB+DDR5'
     },
     {
       id: 12, cat: 'cooling', brand: 'Noctua', icon: '🟤',
       name: 'NH-D15 Chromax Black',
       specs: ['Dual Tower', '2x 140mm', 'LGA1700/AM5', '165W TDP'],
       stock: 'in', rating: 4.9, reviews: 7881,
-      badges: [{ cls: 'badge-gold', label: 'GOAT Cooler' }]
+      badges: [{ cls: 'badge-gold', label: 'GOAT Cooler' }],
+      amazon: 'https://www.amazon.com/s?k=Noctua+NH-D15+Chromax+Black'
     },
   ];
 
-  /* ── TICKER (no prices) ── */
+  /* ── TICKER ── */
   const tickerData = [
     { name: 'Intel Core Ultra 9 285K', tag: 'New' },
-    { name: 'AMD Ryzen 9 9950X', tag: 'AM5' },
-    { name: 'ROG Maximus Z790 Hero', tag: 'WiFi 7' },
-    { name: 'Corsair Vengeance DDR5-6000', tag: 'DDR5' },
-    { name: 'Intel Core i5-14600K', tag: 'Best Seller' },
-    { name: 'Noctua NH-D15 Chromax', tag: 'In Stock' },
-    { name: 'AMD Ryzen 5 7600', tag: 'Value Pick' },
-    { name: 'MSI MAG X670E Tomahawk', tag: 'AM5 Board' },
-    { name: 'G.Skill Trident Z5 Neo 64GB', tag: 'Low Stock' },
+    { name: 'AMD Ryzen 9 9950X',       tag: 'AM5' },
+    { name: 'ROG Maximus Z790 Hero',   tag: 'WiFi 7' },
+    { name: 'Corsair Vengeance DDR5',  tag: 'DDR5' },
+    { name: 'Intel Core i5-14600K',    tag: 'Best Seller' },
+    { name: 'Noctua NH-D15 Chromax',   tag: 'In Stock' },
+    { name: 'AMD Ryzen 5 7600',        tag: 'Value Pick' },
+    { name: 'MSI MAG X670E Tomahawk',  tag: 'AM5 Board' },
+    { name: 'G.Skill Trident Z5 64GB', tag: 'Low Stock' },
   ];
 
   function buildTicker() {
@@ -1506,12 +1533,23 @@
     `).join('');
   }
 
-  /* ── CPU CORES ANIMATION ── */
+  /* ── CPU ANIMATION ── */
   function buildCPU() {
-    const body = document.getElementById('cpu-cores');
-    body.innerHTML = Array.from({ length: 36 }, (_, i) =>
-      `<div class="cpu-core" style="animation-delay:${(i * 0.07).toFixed(2)}s"></div>`
-    ).join('');
+    document.getElementById('cpu-cores').innerHTML =
+      Array.from({ length: 36 }, (_, i) =>
+        `<div class="cpu-core" style="animation-delay:${(i * 0.07).toFixed(2)}s"></div>`
+      ).join('');
+  }
+
+  /* ── HELPERS ── */
+  function starsHTML(n) {
+    return '★'.repeat(Math.floor(n)) + (n % 1 >= 0.5 ? '½' : '') + '☆'.repeat(5 - Math.floor(n) - (n % 1 >= 0.5 ? 1 : 0));
+  }
+
+  function stockHTML(s) {
+    if (s === 'in')  return `<div class="stock-indicator in-stock"><div class="stock-dot"></div>In Stock</div>`;
+    if (s === 'low') return `<div class="stock-indicator low-stock"><div class="stock-dot"></div>Low Stock</div>`;
+    return `<div class="stock-indicator out-stock"><div class="stock-dot"></div>Out of Stock</div>`;
   }
 
   /* ── WISHLIST ── */
@@ -1519,12 +1557,12 @@
   let toastTimeout;
 
   function showNotif(title, sub) {
-    const toast = document.getElementById('notif-toast');
+    const t = document.getElementById('notif-toast');
     document.getElementById('toast-title').textContent = title;
-    document.getElementById('toast-sub').textContent = sub;
-    toast.classList.add('show');
+    document.getElementById('toast-sub').textContent   = sub;
+    t.classList.add('show');
     clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => toast.classList.remove('show'), 3000);
+    toastTimeout = setTimeout(() => t.classList.remove('show'), 3000);
   }
 
   function toggleWishlist(id, btn) {
@@ -1540,21 +1578,7 @@
     }
   }
 
-  /* ── STOCK HTML ── */
-  function stockHTML(s) {
-    if (s === 'in')  return `<div class="stock-indicator in-stock"><div class="stock-dot"></div>In Stock</div>`;
-    if (s === 'low') return `<div class="stock-indicator low-stock"><div class="stock-dot"></div>Low Stock</div>`;
-    return `<div class="stock-indicator out-stock"><div class="stock-dot"></div>Out of Stock</div>`;
-  }
-
-  /* ── STARS ── */
-  function starsHTML(n) {
-    const full = Math.floor(n);
-    const half = n % 1 >= 0.5 ? 1 : 0;
-    return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(5 - full - half);
-  }
-
-  /* ── PRODUCT CARDS ── */
+  /* ── BUILD PRODUCT CARDS ── */
   let activeFilter = 'all';
 
   function buildProducts() {
@@ -1562,7 +1586,6 @@
     grid.innerHTML = products.map(p => `
       <div class="product-card ${activeFilter === 'all' || p.cat === activeFilter ? 'visible' : ''}"
            data-cat="${p.cat}" data-id="${p.id}">
-
         <div class="card-top">
           <div class="product-icon">${p.icon}</div>
           <button class="wishlist-btn ${wishlist.has(p.id) ? 'active' : ''}"
@@ -1570,30 +1593,27 @@
             ${wishlist.has(p.id) ? '♥' : '♡'}
           </button>
         </div>
-
         <div class="card-brand">${p.brand}</div>
         <div class="card-name">${p.name}</div>
-
         <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px">
           ${p.badges.map(b => `<span class="badge ${b.cls}">${b.label}</span>`).join('')}
         </div>
-
         <div class="rating">
           <span class="stars">${starsHTML(p.rating)}</span>
           <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()} reviews)</span>
         </div>
-
         <div class="card-specs">
           ${p.specs.map(s => `<span class="spec-pill">${s}</span>`).join('')}
         </div>
-
         ${stockHTML(p.stock)}
+        <a href="${p.amazon}" target="_blank" class="btn-amazon" style="width:100%; justify-content:center; margin-top:4px">
+          <span class="btn-amazon-icon">🛒</span> Check Price on Amazon
+        </a>
       </div>
     `).join('');
 
-    /* Re-attach animations */
     document.querySelectorAll('.product-card').forEach(card => {
-      card.style.opacity = '0';
+      card.style.opacity   = '0';
       card.style.transform = 'translateY(24px)';
       card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s';
       observer.observe(card);
@@ -1607,14 +1627,13 @@
       t.classList.toggle('active', t.dataset.filter === cat)
     );
     document.querySelectorAll('.product-card').forEach(card => {
-      const matches = cat === 'all' || card.dataset.cat === cat;
-      card.classList.toggle('visible', matches);
+      card.classList.toggle('visible', cat === 'all' || card.dataset.cat === cat);
     });
   }
 
-  document.querySelectorAll('.filter-tab').forEach(tab => {
-    tab.addEventListener('click', () => filterProducts(tab.dataset.filter));
-  });
+  document.querySelectorAll('.filter-tab').forEach(tab =>
+    tab.addEventListener('click', () => filterProducts(tab.dataset.filter))
+  );
 
   /* ── NEWSLETTER ── */
   function subscribeNewsletter() {
@@ -1635,17 +1654,17 @@
   }
 
   /* ── SCROLL REVEAL ── */
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.style.opacity = '1';
+        e.target.style.opacity   = '1';
         e.target.style.transform = 'translateY(0)';
       }
     });
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.compare-card, .why-card').forEach(card => {
-    card.style.opacity = '0';
+    card.style.opacity   = '0';
     card.style.transform = 'translateY(24px)';
     card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s';
     observer.observe(card);
